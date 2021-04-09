@@ -1,0 +1,31 @@
+button {
+  background-color: var(--buttonSecondaryBgColor);
+  border-radius: var(--buttonRadius);
+  border: none;
+  color: var(--buttonSecondaryTextColor);
+  cursor: pointer;
+  font-family: var(--primaryFont);
+  font-size: var(--defaultFontSize);
+  font-weight: var(--primaryFontWeightBold);
+  letter-spacing: var(--letterSpacing);
+  line-height: 1.25rem;
+  outline: none;
+  padding: calc(var(--marginMd) / 2) var(--marginMd);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.primary {
+  background-color: var(--buttonPrimaryBgColor);
+  color: var(--buttonPrimaryTextColor);
+}
+
+.secondary {
+  background-color: var(--buttonSecondaryBgColor);
+  color: var(--buttonSecondaryTextColor);
+}
+
+.danger {
+  background-color: var(--buttonDangerBgColor);
+  color: var(--buttonDangerTextColor);
+}

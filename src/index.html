@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/build/stencil-components.css">
+
+    <script type="module" src="/build/stencil-components.esm.js"></script>
+    <script nomodule src="/build/stencil-components.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Web Components POC</h1>
+
+      <div>
+        <h2>Buttons</h2>
+        <fx-button onclick="handleOnClick()" theme="primary">Primary</fx-button>
+        <fx-button theme="secondary">Secondary</fx-button>
+        <fx-button theme="danger">Danger</fx-button>
+      </div>
+
+
+      <div style="margin-top: 2rem;">
+        <h2>Modal</h2>
+        <fx-button onclick="handleIsModalOpen()">Open Modal</fx-button>
+        <fx-modal id="example-modal" heading="Example Modal" isopen="false" buttons='
+        [
+          {
+            "label": "Submit",
+            "theme": "danger"
+          }
+        ]'>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi ducimus sequi, aut autem error dolores neque dolorum minus, dolore nobis porro exercitationem blanditiis vel fugit reprehenderit eius, alias suscipit nisi.</p>
+        </fx-modal>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.querySelector('#example-modal');
+
+      function handleOnClick() {
+        alert('Clicked!');
+      }
+
+      function handleIsModalOpen() {
+        modal.isopen = true;
+      }
+
+      /*
+        We can pass in custom functions to the modal via
+        custom event listeners that were created inside
+        the web component.
+      */
+      modal.addEventListener('action', handleOnClick)
+    </script>
+  </body>
+</html>
