@@ -2,7 +2,7 @@ import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'fx-button',
-  styleUrl: 'fx-button.scss',
+  styleUrl: 'fx-button.css',
   shadow: true,
 })
 export class FxButton {

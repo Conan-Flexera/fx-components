@@ -2,7 +2,7 @@ import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'fx-modal',
-  styleUrl: 'fx-modal.scss',
+  styleUrl: 'fx-modal.css',
   shadow: true,
 })
 export class FxModal {
