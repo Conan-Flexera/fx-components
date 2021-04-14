@@ -1,18 +1,17 @@
 {
   "name": "@conan-flexera/stencil-components",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Stencil Component Starter",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
-  "types": "dist/types/components.d.ts",
+  "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/stencil-components/stencil-components.esm.js",
+  "unpkg": "dist/stencil-components/stencil-components.js",
   "files": [
-    "dist/",
-    "loader/"
+    "dist/"
   ],
   "scripts": {
     "build": "stencil build",
@@ -22,7 +21,7 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^2.0.1"
+    "@stencil/core": "^1.3.3"
   },
   "license": "MIT",
   "devDependencies": {
