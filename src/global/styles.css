@@ -1,0 +1,81 @@
+:root {
+  /* General */
+  --fontSizeBody: .875rem;
+  --letterSpacing: .2px;
+
+  /* Fonts */
+  --fontFamilyPrimary: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  --fontWeightPrimaryRegular: 400;
+  --fontWeightPrimaryBold: 700;
+
+  /* Colors */
+  --colorBg: #FFFFFF;
+  --colorBodyText: var(--colorTextDark);
+
+  --colorPrimary: #00549f;
+  --colorSecondary: #DDDDDD;
+  --colorDanger: #C32525;
+
+  --colorTextLight: #FFFFFF;
+  --colorTextDark: #333333;
+
+  /* Buttons */
+  --buttonPrimaryBgColor: var(--colorPrimary);
+  --buttonPrimaryTextColor: var(--colorTextLight);
+
+  --buttonSecondaryBgColor: var(--colorSecondary);
+  --buttonSecondaryTextColor: var(--colorTextDark);
+
+  --buttonDangerBgColor: var(--colorDanger);
+  --buttonDangerTextColor: var(--colorTextLight);
+
+  --buttonRadius: 4px;
+
+  /* Spacing */
+  --marginMd: 1rem;
+  --marginLg: 2rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+[data-theme="dark"] {
+  --colorBg: #222222;
+  --colorBodyText: #FFFFFF;
+}
+
+body {
+  background-color: var(--colorBg);
+  color: var(--colorBodyText);
+  font-family: var(--fontFamilyPrimary);
+  font-size: var(--fontSizeBody);
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+a {
+  color: var(--colorPrimary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--marginMd);
+}
+
+.card-grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

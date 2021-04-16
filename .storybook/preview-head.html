@@ -1,0 +1,53 @@
+<script type="module" src="./stencil-components/stencil-components.esm.js"></script>
+<script nomodule="" src="./stencil-components/stencil-components.js"></script>
+
+<style>
+  :root {
+    /* General */
+    --defaultFontSize: .875rem;
+    --letterSpacing: .2px;
+
+    /* Fonts */
+    --primaryFont: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    --primaryFontWeightRegular: 400;
+    --primaryFontWeightBold: 700;
+
+    /* Colors */
+    --primaryColor: #00549f;
+    --secondaryColor: #DDDDDD;
+    --dangerColor: #C32525;
+
+    --lightText: #FFFFFF;
+    --darkText: #333333;
+
+    /* Buttons */
+    --buttonPrimaryBgColor: var(--primaryColor);
+    --buttonPrimaryTextColor: var(--lightText);
+
+    --buttonSecondaryBgColor: var(--secondaryColor);
+    --buttonSecondaryTextColor: var(--darkText);
+
+    --buttonDangerBgColor: var(--dangerColor);
+    --buttonDangerTextColor: var(--lightText);
+
+    --buttonRadius: 4px;
+
+    /* Spacing */
+    --marginMd: 1rem;
+    --marginLg: 2rem;
+  }
+
+  body {
+    font-family: var(--primaryFont);
+  }
+
+  p {
+    line-height: 1.5rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+</style>

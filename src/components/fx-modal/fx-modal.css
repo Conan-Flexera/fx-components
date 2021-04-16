@@ -1,0 +1,59 @@
+.modal {
+  background-color: rgba(0, 0, 0, .5);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.modal__bg {
+  height: 100%;
+  width: 100%;
+}
+
+.modal__content {
+  background-color: var(--colorBg);
+  box-shadow: 0 0 40px 0 rgb(0 0 0 / 25%);
+  left: 50%;
+  max-width: 400px;
+  padding: var(--marginLg);
+  position: fixed;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+
+.modal__buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal__buttons fx-button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.open {
+  display: block;
+}
+
+.open .modal__content {
+  animation: ModalTransition .5s cubic-bezier(0.23, 1, 0.320, 1) forwards;
+}
+
+@keyframes ModalTransition {
+  from {
+    transform: translateX(-50%) translateY(-50%) scale(0);
+    top: 60%;
+  }
+
+  to {
+    transform: translateX(-50%) translateY(-50%) scale(1);
+    top: 50%;
+  }
+}

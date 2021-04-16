@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+    <script type="module" src="/build/fx-components.esm.js"></script>
+    <script nomodule src="/build/fx-components.js"></script>
+    <link rel="stylesheet" href="/build/fx-components.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="assets/FX-Logo.png" width="200" />
+        <fx-button onclick="changeTheme()">Change Theme</fx-button>
+      </div>
+
+      <h1>Web Components POC</h1>
+
+      <div>
+        <fx-p>
+          <a href="https://confluence.flexera.com/pages/viewpage.action?pageId=201694973">
+            Confluence Documentation
+          </a>
+        </fx-p>
+      </div>
+
+      <div>
+        <h2>Paragraph</h2>
+        <fx-p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus accusamus, magni nisi et molestiae asperiores voluptate soluta in accusantium omnis similique ut recusandae neque veritatis iure aliquid a porro atque?
+        </fx-p>
+        <fx-p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quis nisi minus iure reiciendis, veritatis sed vel nam quas. Unde eius ipsum exercitationem cupiditate excepturi? Aperiam ipsa assumenda repudiandae recusandae, eius eum minima nostrum tempora consectetur magnam doloremque. A praesentium obcaecati necessitatibus, ut, modi ab doloremque ad dignissimos, saepe aliquid omnis? Eligendi pariatur corporis modi, fugiat praesentium est, numquam repellendus beatae reprehenderit eveniet facere impedit, non accusamus doloremque nulla. Enim corporis nostrum consectetur eos harum voluptas mollitia, nemo sed, omnis placeat asperiores minus in maxime natus id iusto doloribus at. Itaque, nam. In quo repudiandae molestias mollitia possimus sequi ipsa?
+        </fx-p>
+      </div>
+
+      <div>
+        <h2>Buttons</h2>
+        <fx-button onclick="handleOnClick()" theme="primary">Primary</fx-button>
+        <fx-button theme="secondary">Secondary</fx-button>
+        <fx-button theme="danger">Danger</fx-button>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <h2>Card</h2>
+        <div class="card-grid">
+          <fx-card heading="Card 1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias nesciunt voluptate optio sequi id reiciendis, voluptatum ipsa, modi quam laborum delectus, aut sint eius rem quidem vel. Recusandae, sed?
+          </fx-card>
+
+          <fx-card heading="Card 2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias nesciunt voluptate optio sequi id reiciendis, voluptatum ipsa, modi quam laborum delectus, aut sint eius rem quidem vel. Recusandae, sed?
+          </fx-card>
+
+          <fx-card heading="Card 3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias nesciunt voluptate optio sequi id reiciendis, voluptatum ipsa, modi quam laborum delectus, aut sint eius rem quidem vel. Recusandae, sed?
+          </fx-card>
+        </div>
+      </div>
+
+
+      <div style="margin-top: 2rem;">
+        <h2>Modal</h2>
+        <fx-button onclick="handleIsModalOpen()">Open Modal</fx-button>
+        <fx-modal id="example-modal" heading="Example Modal" isopen="false" buttons='
+        [
+          {
+            "label": "Submit",
+            "theme": "danger"
+          }
+        ]'>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi ducimus sequi, aut autem error dolores neque dolorum minus, dolore nobis porro exercitationem blanditiis vel fugit reprehenderit eius, alias suscipit nisi.</p>
+        </fx-modal>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <h2>Slideout</h2>
+        <fx-button onclick="handleIsSlideoutOpen()">Open Slideout</fx-button>
+        <fx-slideout id="example-slideout" heading="Example Slideout" isopen="false" buttons='
+        [
+          {
+            "label": "Submit",
+            "theme": "primary"
+          }
+        ]'>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi ducimus sequi, aut autem error dolores neque dolorum minus, dolore nobis porro exercitationem blanditiis vel fugit reprehenderit eius, alias suscipit nisi.</p>
+        </fx-slideout>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.querySelector('#example-modal');
+      const slideout = document.querySelector('#example-slideout');
+
+      function handleOnClick() {
+        alert('Clicked!');
+      }
+
+      function handleIsModalOpen() {
+        modal.isopen = true;
+      }
+
+      function handleIsSlideoutOpen() {
+        slideout.isopen = true;
+      }
+
+      function changeTheme() {
+        let currentTheme = document.documentElement.getAttribute("data-theme");
+
+        document.documentElement.setAttribute('data-theme', currentTheme === "light" ? "dark" : "light")
+      }
+
+      /*
+        We can pass in custom functions to the modal via
+        custom event listeners that were created inside
+        the web component.
+      */
+      modal.addEventListener('action', handleOnClick)
+    </script>
+  </body>
+</html>

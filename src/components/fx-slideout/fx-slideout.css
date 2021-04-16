@@ -1,0 +1,64 @@
+.slideout {
+  background-color: rgba(0, 0, 0, .5);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.slideout__bg {
+  height: 100%;
+  width: 100%;
+}
+
+.slideout__content {
+  background-color: var(--colorBg);
+  box-shadow: 0 0 40px 0 rgb(0 0 0 / 25%);
+  height: 100%;
+  max-width: 400px;
+  padding: var(--marginLg);
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+}
+
+.slideout h2 {
+  margin-top: 0;
+}
+
+
+.slideout__buttons {
+  bottom: 60px;
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--marginLg);
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.slideout__buttons fx-button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.open {
+  display: block;
+}
+
+.open .slideout__content {
+  animation: slideoutTransition .85s cubic-bezier(0.23, 1, 0.320, 1) forwards;
+}
+
+@keyframes slideoutTransition {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
